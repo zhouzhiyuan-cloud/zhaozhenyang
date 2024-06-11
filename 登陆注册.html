@@ -1,0 +1,267 @@
+<html>
+	<head>
+		<title>注册界面</title>
+		<meta charset="UTF-8"/>
+		<style type="text/css">
+		body{
+			background: url(背景.jpg) no-repeat center 0;
+			margin: 0 auto;
+			};
+		font{color="darkgray"};
+		tr{height:60px}
+		</style>
+		<script type="text/javascript">
+				function createCode(){
+					var code=Math.floor(Math.random()*9000+1000);
+					var  span=document.getElementById("codeSpan");
+					span.innerHTML=code;
+				}
+				function checkUname(){
+						var uname=document.getElementById("uname").value;
+						var reg=/[0-9a-zA-Z]{3,8}/;
+						var unameSpan=document.getElementById("unameSpan");
+						if(unameSpan==""||unameSpan==null){
+							unameSpan.innerHTML="*用户名不能为空";
+							unameSpan.style.color="red";
+							return false;
+						}else if(reg.test(uname)){
+							unameSpan.innerHTML="<img width='35' height='25' src='gou.png'/>";;
+							return true;
+						}else{
+							unameSpan.innerHTML="*用户名格式不符"
+							unameSpan.style.color="red";
+							return false;
+						}
+					
+				}
+				function checkPwd(){
+						var upwd=document.getElementById("pwd").value;
+						var reg=/^\S{6,20}$/;
+						var span=document.getElementById("pwdSpan");
+						if(span==""||span==null){
+							span.innerHTML="*密码不能为空";
+							span.style.color="red";
+							return false;
+						}else if(reg.test(upwd)){
+							span.innerHTML="<img width='35' height='25' src='gou.png'/>";
+							return true;
+						}else{
+							span.innerHTML="*密码格式不符"
+							span.style.color="red";
+							return false;
+						}
+					checkPwd2();
+				}
+					function checkPwd2(){
+							var pwd=document.getElementById("pwd").value;
+							var pwd2=document.getElementById("pwd2").value;
+							var span=document.getElementById("pwd2Span");
+							if( pwd2==""|| pwd2==null){
+							span.innerHTML="*密码不能为空";
+							span.style.color="red";
+							return false;
+						}else if(pwd===pwd2){
+							span.innerHTML="<img width='35' height='25' src='gou.png'/>";
+							return true;
+						}else{
+							span.innerHTML="*密码不同，请重新输入"
+							span.style.color="red";
+							return false;
+						}
+					}
+					function checkPhone(){
+						return checkField("phone",/^1[3456789]\d{9}$/);
+					}
+					function checkmail(){
+						return checkField("mail",/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/)
+					}
+					function checkAddress(){
+						var sel=document.getElementById("address").value;
+						var span=document.getElementById("addressSpan");
+						if(sel!=0){
+							span.innerHTML="<img width='35' height='25' src='gou.png'/>";
+							return true;
+						}else{
+							span.innerHTML="请选择籍贯";
+							span.style.color="red";
+							return false;
+						}
+					}
+					function checkFav(){
+						var favs=document.getElementsByName("fav");
+						var span=document.getElementById("favSpan");
+						for(var i=0;i<favs.length;i++){
+							if(favs[i].checked){
+								span.innerHTML="<img width='35' height='25' src='gou.png'/>";
+								return true;
+							}
+						}
+						span.innerHTML="爱好至少选择一项";
+						span.style.color="red";
+						return false;
+					}
+						function checkCode(){
+								var code=document.getElementById("code").value;
+								var code2=document.getElementById("codeSpan").innerHTML;
+								var span=document.getElementById("codeSpan2");
+								if( code==""|| code==null){
+								span.innerHTML="*验证码不能为空";
+								span.style.color="red";
+								createCode();
+								return false;
+							}else if(code==code2){
+								span.innerHTML="<img width='35' height='25' src='gou.png'/>";
+								return true;
+							}else{
+								span.innerHTML="*验证码错误"
+								span.style.color="red";
+								createCode();
+								return false;
+							}
+						}
+						function checkAgree(){
+							document.getElementById("sub").disabled=!document.getElementById("agree").checked;
+						}
+						function checkSub(){
+							checkUname();
+							checkPwd();
+							checkPwd2();
+							checkmail();
+							checkPhone();
+							checkFav();
+							checkAddress();
+							checkCode();
+							return checkUname()&&checkPwd()&&checkPwd2()&&checkmail()&&checkPhone()&&checkFav()&&checkAddress()&&checkCode();
+						}
+						function checkField(id,reg){
+							var inp=document.getElementById(id);
+							var	va=inp.value;
+							var	alt=inp.alt;
+							var span=document.getElementById(id+"Span");
+							if(va==""||va==null){
+								span.innerHTML="*"+alt+"不能为空";
+								span.style.color="red";
+								return false;
+								}else if(reg.test(va)){
+								span.innerHTML="<img width='35' height='25' src='gou.png'/>";
+								return true;
+								}else{
+								span.innerHTML="*"+alt+"格式不符";
+								span.style.color="red";
+								return false;
+								}
+								}
+						function Sub(){
+						if(checkUname()&&checkPwd()&&checkPwd2()&&checkmail()&&checkPhone()&&checkFav()&&checkAddress()&&checkCode()){
+							alert('注册成功');
+							window.location.href="大作业.html";
+						}
+						else alert('注册失败，请修改后重试');
+						}
+		</script>
+	</head>
+	<body onload="createCode()">
+		<h3 align="center">注册界面</h3>
+		<hr />
+		<form action="#" method="get" onsubmit="return checkSub()">
+			<table border="0px" cellspacing="0" cellpadding="2px" align="center">
+				<tr>
+					<td width="80px">用户名：</td>
+					<td width="400px">
+						<input type="text" name="uname" id="uname" value="" onblur="checkUname()" alt="用户名"/>
+						<span id="unameSpan">
+							<font>3-8个字母或数字组成</font>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td>密码：</td>
+					<td>
+						<input type="password" name="pwd" id="pwd" value="" onblur="checkPwd()"/>
+						<span id="pwdSpan">
+						<font>要求6-20位密码</font>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td>确认密码：</td>
+					<td>
+						<input type="password" name="pwd2" id="pwd2" value=""  onblur="checkPwd2()"/>
+						<span id="pwd2Span"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>邮箱：</td>
+					<td>
+						<input type="text" name="mail" id="mail" value="" alt="邮箱" onblur="checkmail()"/>
+						<span id="mailSpan"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>手机号：</td>
+					<td>
+						<input type="text" name="phone" id="phone" value="" alt="手机号" onblur="checkPhone()"/>
+						<span id="phoneSpan"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>性别</td>
+					<td>
+						男<input type="radio" name="sex" id="sex" value="1"checked="checked" />
+						女<input type="radio" name="sex" id="sex" value="0" />
+					</td>
+				</tr>
+				<tr>
+					<td>爱好</td>
+					<td>
+						读书<input type="checkbox" name="fav" id="fav" value="1" onclick="checkFav()"/>
+						听音乐<input type="checkbox" name="fav" id="fav" value="2" onclick="checkFav()" />
+						看电影<input type="checkbox" name="fav" id="fav" value="3" onclick="checkFav()" />
+						打羽毛球<input type="checkbox" name="fav" id="fav" value="4" onclick="checkFav()" /><br />
+						其他<input type="checkbox" name="fav" id="fav" value="5" onclick="checkFav()" />
+						<span id="favSpan"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>籍贯：</td>
+					<td>
+						<select name="address" id="address" onchange="checkAddress()">
+							<option value="0" selected="selected">--请选择--</option>
+							<option value="1">信阳</option>
+							<option value="2">新乡</option>
+							<option value="3">武汉</option>
+							<option value="4">郑州</option>
+						</select>
+						<span id="addressSpan"></span>
+					</td>
+				</tr>
+				<tr height="80px">
+					<td>个人介绍：</td>
+					<td>
+						<textarea name="jieshao" rows="4" cols="10"></textarea>
+					</td>
+				</tr>
+				<tr align="center">
+					<td colspan="2">是否同意本公司的协议
+					<input type="checkbox" name="agree" id="agree" value="" onclick="checkAgree()" />
+					</td>
+					
+				</tr>
+				<tr>
+					<td>验证码：</td>
+					<td>
+						<input type="text" id="code" value="" style="width:100px;" onblur="checkCode()" />&nbsp;&nbsp;&nbsp;
+						<span id="codeSpan" style="background-image: url(背景.png);color: black;" onclick="createCode()">
+						</span>
+						<span id="codeSpan2"></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="button" id="sub" name="sub" value="注册" disabled="disabled" onclick="Sub()"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

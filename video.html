@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		*{margin: 0;padding: 0;border-width: 0px;border-style: solid;}
+		div[id=head]{
+			width:100%;
+			height:60px;
+			background:#000000
+		}
+		div .con{
+			width:2000px;
+			height:60px;
+		}
+		div .con .left{float:left;}
+		div .con .right{float:right;}
+		div .con .left li{
+			float:left;
+			line-height:60px;
+			height:60px;
+			color:#fff;
+			margin-right:50px;
+			cursor: pointer;
+			margin-bottom: 0px;
+			list-style-type: none;
+		}
+		div .con .right li{
+			float:right;
+			line-height:60px;
+			height:60px;
+			color:#fff;
+			margin-left:50px;
+			cursor: pointer;
+			margin-bottom: 0px;
+			list-style-type: none;
+		}
+		nav .navbar-brand{
+			margin-left: 30px;
+		}
+		.logo{ border:1px ;border-style: none; width:120px; height:50px} 
+		.logo img{width:110px; height:110px;position:relative;
+			top:-29px;}
+		.content {
+		color:#000000;
+		width:1200px;
+		margin:0 auto 20px;
+		}
+		.content p:first-child{
+		font-size:16px;
+		line-height:50px;
+		}
+		.content p{
+		font-size:20px;
+		}
+		.content iframe{
+		width:1200px;
+		margin: 30px 0 20px 0 ;
+		height:675px;
+		}
+		.content a{
+		float:left;
+		width:80px;
+		height:24px;
+		line-height:24px;
+		color:#000000;
+		padding-left:30px;
+		margin-left:20px;
+		background:url(260.png) left center;
+		}
+		.content a:nth-of-type(2){background :url(../images/pic06. png) no-repeat left center;}
+		.content a:nth-of-type(3){ background :url(../images/pic 07. png) no-repeat left center;}
+		.content h3{
+		float:right;
+		font-weight:normal;
+		
+		}
+		.list{
+		width:1200px;
+		margin:0 auto;
+		padding-top:20px;
+		}
+		.list .left{
+		float:left;
+		width:932px;
+		height:990px:
+		}
+		.list .left p{
+		font-size:20px;
+		color:#000000;
+		margin-bottom:20px;
+		}
+		.list .left a{
+		width:218px;
+		height:123px;
+		foat:left;
+		margin: 0 15px 15px 0 ;
+		overflow:hidden;
+		background :url(./images/pic 08. jpg);
+		}
+		.list .left a:nth-of-type(2),.list .left a:nth-of-type(6), .list .left a:nth-of-type(10){ background :url(../images/pic 09. jpg);}
+		.list .left a:nth-of-type(3),.list .left a:nth-of-type(7), .list .left a:nth-of-type(11){ background :url(./images/pic 10. jpg);}
+		.list .left a:nth-of-type(4),.list .left a:nth-of-type(8), .list .left a:nth-of-type(12){ background :url(./images/picil. jpg);}
+		@keyframes 'findIn'{
+		    0%{-webkit-transform:rotate(-360deg);}
+		    100%{-webkit-transform:none;}
+		}
+		.list .left a img{
+		weight:96px;
+		height:64px;
+		}
+		.list .left .last{
+		width:860px;
+		background :#fff;
+		height:350px;
+		padding: 25px 0 0 60px ;
+		}
+		.list .left .last textarea{
+		width:790px;
+		height:240px;
+		padding: 10px 0 0 10px ;
+		border:1px solid #000000;
+		color:#000000:
+		}
+		.list .left .last span{
+		float:right;
+		margin: 10px 56px 0 0 ;
+		width:100px;
+		height:30px;
+		line-height:30px;
+		text-align:center;
+		color:#fff;
+		background :#2fade7;
+		border-radius:5px;
+		resize:none;
+		}
+		.list .right{
+		float:left;
+		width:252px;
+		height:990px;
+		}
+		.list .right p{
+		font-size:20px;
+		color:#000000;
+		height:40px;
+		border-bottom:2px solid #000000;
+		}
+		.list .right section{
+		margin: 10px 0 20px 0 ;
+		width:252px;
+		height:280px;
+		padding-top:20px;
+		background :#fff;
+		text-align:center;
+		color:#000000;
+		}
+		.list .right section p{
+		font-size:14px;
+		border:none;
+		text-align:left;
+		height:180px;
+		padding: 20px 20px 0 20px ;
+		}
+		.list.right section span{
+		color:#2fade7; 
+		float:right;
+		margin-right:20px;
+		}
+		.list .right img{
+		display:block; 
+		margin-top:15px;
+		weight:192px;
+		height:128px;
+		}
+		#head .con ul li a{
+			text-decoration: none;
+			color:#ffffff
+		}
+		footer{
+			width:100%;
+			height:127px;
+			margin-top:100px;
+			background:#222222;
+			color:#fff;
+			text-align: center;
+			position: relative;
+			top:800px;
+		}
+		footer .foot{
+			width:1200px;
+			height:127px;
+			margin: 0 auto;
+			position: relative;
+		}
+		footer span{
+			width:58px;
+			height:32px;
+			line-height:43px;
+			text-align: center;
+			color: #ffffff;
+			position: absolute;
+			top:-31px;
+			left:600px;
+			margin-left:-29px;
+		}
+		footer p{
+			line-height: 127px;
+			width:1000px;
+			position: relative;
+			top:-900px;
+			left:103px;
+		}
+		footer img{
+			width:100px;
+			height:50px;
+			position: absolute;
+			top:-37px;
+			left:550px;
+		}
+		</style>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="daohang">
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="width:100%";>
+		  <a class="navbar-brand" href="#"><div class="logo"><img src="90px-A-SOUL透明.png"></div></a>
+		  <ul class="navbar-nav">
+		    <li class="nav-item">
+		      <a class="nav-link" href="user.html">个人中心</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" href="video.html">视频播放</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" href="论坛.html">论坛交流</a>
+		    </li>
+		  </ul>
+		</nav>
+		</div>
+		<div id="head">
+			<div class="con">
+				<ul class="left">
+					<li><a href="大作业.html">A-SOUL首页</a></li>
+					<li><a href="https://zh.moegirl.org.cn/%E5%90%91%E6%99%9A">Ava向晚</a></li>
+					<li><a href="https://zh.moegirl.org.cn/%E8%B4%9D%E6%8B%89(%E8%99%9A%E6%8B%9FUP%E4%B8%BB)#">Bella贝拉</a></li>
+					<li><a href="https://zh.moegirl.org.cn/%E7%8F%88%E4%B9%90">Carol珈乐</a></li>
+					<li><a href="https://zh.moegirl.org.cn/%E5%98%89%E7%84%B6">Diana嘉然</a></li>
+					<li><a href="https://zh.moegirl.org.cn/%E4%B9%83%E7%90%B3">Eileen乃琳</a></li>
+				</ul>
+				<ul class="right">
+					<li><a href="登陆注册.html">登陆|注册</a></li>
+					<li><a href="index.html">关于我们</a></li>
+					<li><a href="https://app.a-soul.fans/">APP下载</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<p>A-SOUL首页>团播</p>
+			<p>正在播放：除夕</p>
+			<iframe src="//player.bilibili.com/player.html?aid=211214572&bvid=BV1Ga41127eH&cid=497462950&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+			<a href="#">1212</a>
+			<a href="#">收藏</a>
+			<a href="#">分享</a>
+			<h3>12.5万次播放</h3>
+		</div>
+		<div class="list">
+			<div class="left">
+				<p>选集-共xx集</p>
+				<a href="#"><img class="findIn" src="asoul11.webp"></a>
+				<a href="#"><img src="img/传说的世界.jpg"></a>
+				<a href="#"><img src="img/超级敏感.jpg"></a>
+				<a href="#"><img src="img/除夕.jpg"></a>
+				<p>相关视频</p>
+				<a href="#"><img src="img/asoul1.jpg"></a>
+				<a href="#"><img src="img/asoul2.jpg"></a>
+				<a href="#"><img src="img/asoul3.jpg"></a>
+				<a href="#"><img src="img/asoul4.jpg"></a>
+				<a href="#"><img src="img/asoul5.jpg"></a>
+				<a href="#"><img src="img/asoul6.jpg"></a>
+				<a href="#"><img src="img/asoul7.jpg"></a>
+				<a href="#"><img src="img/asoul9.webp"></a>
+				<p>评论：</p>
+				<div class="last">
+					<form action="#" method="post">
+						<textarea cols="30" rows="10">我来说两句......</textarea>
+					</form>
+					 <span>发表评论</span>
+				</div>
+			</div>
+			<div class="right">
+				<p>视频信息</p>
+				<section>
+					<h3>《除夕》</h3>
+					<p style="overflow: auto;">《除夕》是由A-SOUL与音阙诗听共同打造的虎年贺岁单曲，2022年1月31日首发于2022哔哩哔哩拜年纪，于2022年2月3日在QQ音乐由音阙诗听发行。截止目前，B站团曲MV（拜年纪单品）已有205.14万次观看，6.71万人收藏。专辑简介:一岁枯荣又匆匆划过，一载铜锣已悄悄响起，忙碌辗转了一个春秋，期待这个明亮喧嚣而永远烟火气的节日。
+《除夕》就像是一幅色彩鲜亮的人间除夕夜长画卷，用逐渐密集欢快的鼓点引领每一个异途归家的人走入这场守岁望烟火的热闹家里，最鲜活地描摹出记忆里笑语最盛的那个角落。
+伴随甜蜜跳动的音节，送给每一个走入除夕的人，祝你除夕拥有最难忘的快乐和灿烂。</p>
+					<span>详情></span>
+				</section>
+				<p>精选活动</p>
+				<img src="img/asoul10.webp">
+			</div>
+		</div>
+        <footer>
+			<div class="foot">
+				<a href="#head"><img src="img/260.png"><span>top</span></a>
+				<p>郑州轻工业大学赵振洋版权所有</p>
+			</div>
+			</footer>
+	</body>
+</html>

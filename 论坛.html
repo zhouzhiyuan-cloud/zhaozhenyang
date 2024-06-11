@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>模拟论坛</title>
+		<style type="text/css">
+		*{margin: 0;padding: 0;border-width: 0px;border-style: solid;}
+		div[id=head]{
+			width:100%;
+			height:60px;
+			background:#000000
+		}
+		div .con{
+			width:2000px;
+			height:60px;
+		}
+		div .con .left{float:left;}
+		div .con .right{float:right;}
+		div .con .left li{
+			float:left;
+			line-height:60px;
+			height:60px;
+			color:#fff;
+			margin-right:50px;
+			cursor: pointer;
+			margin-bottom: 0px;
+			list-style-type: none;
+		}
+		div .con .right li{
+			float:right;
+			line-height:60px;
+			height:60px;
+			color:#fff;
+			margin-left:50px;
+			cursor: pointer;
+			margin-bottom: 0px;
+			list-style-type: none;
+		}
+		nav .navbar-brand{
+			margin-left: 30px;
+		}
+		.logo{ border:1px ;border-style: none; width:120px; height:50px} 
+		.logo img{width:110px; height:110px;position:relative;
+			top:-29px;}
+			.wd{
+				position: relative;
+				left:-180px;
+				top:-30px;
+			}
+			.tl{
+				position: relative;
+				left:620px;
+				top:-60px;
+			}
+			html{
+				height:100vh;
+			}
+			body{
+				font-size:12px;
+				height:100vh;
+				}
+			#discuss,#discuss-datas{
+				width: 990px;
+			}
+			#discuss div.mt{
+				height: 30px;
+				border: 1px solid #DDDDDD;
+				border-top: 2px solid #999999;
+				background: #f7f7f7;
+			}
+			#discuss-content{
+				border-bottom: 1px solid #DDDDDD;
+			}
+			#discuss-datas tr.header td{
+				font-weight: bold;
+				padding: 5px 0;
+				border-bottom: 1px solid #DDDDDD;
+				color: #666666;
+			}
+			#discuss-datas td{
+				text-align: center;
+			}
+			#discuss-datas td.col1{
+				width: 620px;
+				text-align: left;
+			}
+			#discuss-datas tbody td{
+				color: #9c9c9c;
+			}
+			#discuss a{
+				text-decoration: none;
+				color: #005aa0;
+			}
+			#discuss a:hover{
+				text-decoration: underline;
+			}
+			#discuss-datas tbody td{
+				padding: 5px 0px;
+				border-bottom: 1px dotted #DDDDDD;
+			}
+			#discuss i{
+				padding-left: 21px;
+				padding-bottom: 5px;
+				background:url(img/c63802c9ee7e4ddec0e53e152e665ea.png) no-repeat;
+				background-size: 100%;
+			}
+			#discuss div.mt a{
+				float:left;
+				width: 100px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+			}
+			#discuss div.mt a:hover{
+				text-decoration: none;
+				color: #E4393C;
+			}
+			#discuss div.mt a.current{
+				border: 1px solid #DDDDDD;
+				border-top: 2px solid #E4393C;
+				border-bottom: 0;
+				background: #ffffff;
+				margin-top: -6px;
+				height: 35px;
+				line-height: 35px;
+				color: #E4393C;
+			}
+			#head .con ul li a{
+				text-decoration: none;
+				color:#ffffff
+			}
+			footer{
+				width:100%;
+				height:127px;
+				margin-top:100px;
+				background:#222222;
+				color:#fff;
+				text-align: center;
+				position:absolute;
+				bottom:0px;
+			}
+			footer .foot{
+				width:1200px;
+				height:127px;
+				margin: 0 auto;
+				position: relative;
+				top:120px;
+			}
+			footer span{
+				width:58px;
+				height:32px;
+				line-height:43px;
+				text-align: center;
+				color: #ffffff;
+				position: absolute;
+				top:-155px;
+				left:600px;
+				margin-left:-29px;
+			}
+			footer p{
+				line-height: 127px;
+				position: relative;
+				left:0px;
+				top:-120px
+			}
+			footer img{
+				width:100px;
+				height:50px;
+				position: absolute;
+				top:-158px;
+				left:550px;
+			}
+		</style>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="daohang">
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="width:100%";>
+		  <a class="navbar-brand" href="#"><div class="logo"><img src="90px-A-SOUL透明.png"></div></a>
+		  <ul class="navbar-nav">
+		    <li class="nav-item">
+		      <a class="nav-link" href="user.html">个人中心</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" href="video.html">视频播放</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" href="论坛.html">论坛交流</a>
+		    </li>
+		  </ul>
+		</nav>
+		</div>
+		<div id="head">
+			<div class="con">
+				<ul class="left">
+					<li><a href="大作业.html">A-SOUL首页</a></li>
+					<li><a href="https://zh.moegirl.org.cn/%E5%90%91%E6%99%9A">Ava向晚</a></li>
+					<li><a href="https://zh.moegirl.org.cn/%E8%B4%9D%E6%8B%89(%E8%99%9A%E6%8B%9FUP%E4%B8%BB)#">Bella贝拉</a></li>
+					<li><a href="https://zh.moegirl.org.cn/%E7%8F%88%E4%B9%90">Carol珈乐</a></li>
+					<li><a href="https://zh.moegirl.org.cn/%E5%98%89%E7%84%B6">Diana嘉然</a></li>
+					<li><a href="https://zh.moegirl.org.cn/%E4%B9%83%E7%90%B3">Eileen乃琳</a></li>
+				</ul>
+				<ul class="right">
+					<li><a href="登陆注册.html">登陆|注册</a></li>
+					<li><a href="index.html">关于我们</a></li>
+					<li><a href="https://app.a-soul.fans/">APP下载</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="discuss">
+			<div class="mt">
+				<a href="#">晒单贴</a>
+				<a href="#" class="current">网友讨论圈</a>
+				<a class="wd" href="#">问答帖</a>
+				<a class="tl" href="#">讨论帖</a>
+			</div>
+			<div id="discuss-content">
+				<table id="discuss-datas">
+					<tr class="header">
+						<td class="col1">主题</td>
+						<td>浏览/回复</td>
+						<td>作者</td>
+						<td>时间</td>
+					</tr>
+					<tbody>
+						<tr>
+							<td class="col1">
+								<i class="sheng"></i>
+								<a href="#">#抵制字节跳动剥削员工#</a>
+							</td>
+							<td>12/60</td>
+							<td><a href="#">赵振洋</a></td>
+							<td>2022/5/25</td>
+						</tr>
+						<tr>
+							<td class="col1">
+								<i class="meidao"></i>
+								<a href="">#A-SOUL成员遭遇公司PUA#</a>
+							</td>
+							<td>12/160</td>
+							<td><a href="#">赵振洋</a></td>
+							<td>2022/5/20</td>
+						</tr>
+						<tr>
+							<td class="col1">
+								<i></i>
+								<a href="#">#a-soul管理层恶意泄露员工隐私#</a>
+							</td>
+							<td>122/990</td>
+							<td><a href="#">赵振洋</a></td>
+							<td>2022/5/18</td>
+						</tr>
+					</tbody>
+				</table>
+				<div id="discuss-total">
+					<div class="all_discuss">
+						共900个话题
+						<a href="#">浏览全部话题>>></a>
+					</div>
+					<div class="new_discuss" align="right">
+						有问题要与其他用户讨论
+						<a href="#">[发表帖子]</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="foot">
+				<a href="#head"><img src="img/260.png"><span>top</span></a>
+				<p>郑州轻工业大学赵振洋 版权所有</p>
+			</div>
+		</footer>
+	</body>
+</html>
